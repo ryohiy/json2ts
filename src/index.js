@@ -1,14 +1,14 @@
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { basename } from 'path';
-import { convertJsonToTs } from './converter/converter.js';
-import { askOverwrite } from './promptHandlers/promptHandlers.js';
+import { convertJsonToTs } from './lib/converter/converter.js';
+import { askOverwrite } from './lib/promptHandlers/promptHandlers.js';
 
 /**
  * Process the JSON file and convert it to TypeScript
  * @param {string} inputFile - Path to the JSON file
  */
-export async function processJsonFile(inputFile) {
+export async function mainProcess(inputFile) {
   try {
     // Check if file exists
     if (!existsSync(inputFile)) {

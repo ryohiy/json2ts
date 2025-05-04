@@ -31,7 +31,16 @@
   - 例: エラーメッセージは "File not found" のように英語で表示
   - 例: コメントは "Convert JSON to TypeScript" のように英語で記述
 
-## 5. 機能の追加手順
+## 5. ファイル命名規則
+- すべてのファイルはlowerCamelCaseを使用する
+  - 例: ✓ myFile.js
+  - 例: ✓ jsonProcessor.js
+  - 例: ✗ json-processor.js
+  - 例: ✗ JsonProcessor.js
+- テストファイルは対象ファイル名に`.test.js`を付加
+  - 例: myFile.js → myFile.test.js
+
+## 6. 機能の追加手順
 1. 該当機能用のディレクトリを src/ 以下に作成
 2. 実装ファイルとテストファイルを作成
 3. docs/directory.md を更新（必要な場合）

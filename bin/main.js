@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { processJsonFile } from '../src/index.js';
+import { mainProcess } from '../src/index.js';
 
 async function main() {
   // Get the input file from command line arguments
@@ -11,7 +11,7 @@ async function main() {
     process.exit(1);
   }
 
-  await processJsonFile(inputFile);
+  await mainProcess(inputFile);
 }
 
 main().catch(error => {
