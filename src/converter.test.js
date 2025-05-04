@@ -1,4 +1,5 @@
 import { convertJsonToTs } from './converter.js';
+import { describe, test, expect } from 'vitest';
 
 describe('Basic JSON conversion', () => {
   test('converts simple JSON object', () => {
