@@ -1,7 +1,6 @@
 {
   "name": "json2ts",
   "version": "1.0.0",
-  "description": "Convert JSON files to TypeScript type definitions",
   "type": "module",
   "bin": {
     "json2ts": "bin/json2ts.js"
@@ -13,22 +12,7 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": [
-    "json",
-    "typescript",
-    "converter"
-  ],
-  "author": "",
   "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryohiy/json2ts.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ryohiy/json2ts/issues"
-  },
-  "homepage": "https://github.com/ryohiy/json2ts#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.27.1",
     "@types/jest": "^29.5.14",
