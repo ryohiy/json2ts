@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { basename } from 'path';
 import { convertJsonToTs } from './converter/converter.js';
-import { askOverwrite } from './promptHandlers.js';
+import { askOverwrite } from './promptHandlers/promptHandlers.js';
 
 /**
  * Process the JSON file and convert it to TypeScript
