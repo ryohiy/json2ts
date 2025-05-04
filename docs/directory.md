@@ -3,7 +3,7 @@
 ```
 json2ts/
 ├── bin/                     # CLIツールのエントリーポイント
-│   └── json2ts.js          # CLI実行ファイル
+│   └── main.js             # CLI実行ファイル
 │
 ├── src/                     # ソースコードのメインディレクトリ
 │   ├── converter/         # JSON→TS変換機能のディレクトリ

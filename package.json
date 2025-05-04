@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "json2ts": "bin/json2ts.js"
+    "json2ts": "bin/main.js"
   },
   "files": [
     "bin",
