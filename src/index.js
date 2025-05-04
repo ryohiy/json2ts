@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, basename } from 'path';
 import { convertJsonToTs } from './converter.js';
 
 /**
@@ -18,8 +18,11 @@ export async function processJsonFile(inputFile) {
     // Read JSON file
     const jsonContent = await readFile(inputFile, 'utf-8');
 
+    // Get the base filename
+    const filename = basename(inputFile);
+    
     // Convert to TypeScript
-    const tsContent = convertJsonToTs(jsonContent);
+    const tsContent = convertJsonToTs(jsonContent, filename);
 
     // Generate output file path (same directory, .ts extension)
     const outputFile = inputFile.replace(/\.json$/, '.ts');
