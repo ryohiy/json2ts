@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { basename } from 'path';
 import { createInterface } from 'readline';
-import { convertJsonToTs } from './converter.js';
+import { convertJsonToTs } from './converter/converter.js';
 
 /**
  * Ask user for confirmation before overwriting existing file
