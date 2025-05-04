@@ -1,7 +1,28 @@
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { join, dirname, basename } from 'path';
+import { createInterface } from 'readline';
 import { convertJsonToTs } from './converter.js';
+
+/**
+ * Ask user for confirmation before overwriting existing file
+ * @param {string} filename - Name of the file to overwrite
+ * @returns {Promise<boolean>} - True if user confirms, false otherwise
+ */
+async function askForOverwrite(filename) {
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  return new Promise((resolve) => {
+    rl.question(`${filename} already exists. Do you want to overwrite it?: yes / no\n`, (answer) => {
+      rl.close();
+      const normalizedAnswer = answer.toLowerCase().trim();
+      resolve(normalizedAnswer === 'yes' || normalizedAnswer === 'y');
+    });
+  });
+}
 
 /**
  * Process the JSON file and convert it to TypeScript
@@ -26,6 +47,15 @@ export async function processJsonFile(inputFile) {
 
     // Generate output file path (same directory, .ts extension)
     const outputFile = inputFile.replace(/\.json$/, '.ts');
+
+    // Check if output file exists and ask for confirmation
+    if (existsSync(outputFile)) {
+      const shouldOverwrite = await askForOverwrite(outputFile);
+      if (!shouldOverwrite) {
+        console.log('Operation cancelled');
+        process.exit(0);
+      }
+    }
 
     // Write TypeScript file
     await writeFile(outputFile, tsContent);
