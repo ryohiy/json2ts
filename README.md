@@ -1,11 +1,11 @@
 # json2ts
 
-A CLI tool to convert JSON files to TypeScript type definitions.
+A CLI tool to convert JSON files to TypeScript constant objects.
 
 ## Features
 
-- Convert JSON files to TypeScript with `as const` assertions
-- Automatically generate variable names from JSON filenames
+- Convert JSON files to TypeScript constant objects with `as const` assertions
+- Generate constant names automatically from JSON filenames
 - Interactive overwrite confirmation for existing files
 - Pretty-printed output with proper indentation
 
