@@ -1,0 +1,19 @@
+{
+  "name": "json2ts",
+  "version": "1.0.0",
+  "description": "Convert JSON files to TypeScript type definitions",
+  "type": "module",
+  "bin": {
+    "json2ts": "./bin/json2ts.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["json", "typescript", "converter"],
+  "author": "",
+  "license": "MIT"
+}
