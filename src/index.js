@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
-import { join, dirname, basename } from 'path';
+import { basename } from 'path';
 import { createInterface } from 'readline';
 import { convertJsonToTs } from './converter.js';
 
